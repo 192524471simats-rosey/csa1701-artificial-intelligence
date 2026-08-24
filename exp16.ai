@@ -1,0 +1,16 @@
+import math
+
+def sigmoid(x):
+    return 1 / (1 + math.exp(-x))
+
+# Input values
+x1, x2 = 1, 0
+
+# Weights and bias
+w1, w2, b = 0.5, 0.5, 0.1
+
+# Feed Forward
+z = x1 * w1 + x2 * w2 + b
+output = sigmoid(z)
+
+print("Output:", output)
