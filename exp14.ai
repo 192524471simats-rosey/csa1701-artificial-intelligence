@@ -1,0 +1,26 @@
+def minimax(depth, node, alpha, beta, maximizing):
+    if depth == 3:
+        return [3, 5, 6, 9, 1, 2, 0, -1][node]
+
+    if maximizing:
+        best = -999
+        for i in range(2):
+            best = max(best, minimax(depth+1, node*2+i,
+                                    alpha, beta, False))
+            alpha = max(alpha, best)
+            if beta <= alpha:
+                break
+        return best
+
+    else:
+        best = 999
+        for i in range(2):
+            best = min(best, minimax(depth+1, node*2+i,
+                                    alpha, beta, True))
+            beta = min(beta, best)
+            if beta <= alpha:
+                break
+        return best
+
+print("Best value:",
+      minimax(0, 0, -999, 999, True))
