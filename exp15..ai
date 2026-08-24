@@ -1,0 +1,12 @@
+# Decision Tree
+
+def decision_tree(age):
+    if age < 18:
+        return "Not Eligible"
+    elif age < 60:
+        return "Eligible"
+    else:
+        return "Senior Citizen"
+
+age = int(input("Enter age: "))
+print("Result:", decision_tree(age))
